@@ -1,12 +1,37 @@
-[gd_scene load_steps=28 format=3 uid="uid://d2d18cinu7smb"]
+[gd_scene load_steps=35 format=3 uid="uid://d2d18cinu7smb"]
 
 [ext_resource type="Texture2D" uid="uid://sbxrdnsilx4" path="res://Assets/individual_sheets/male_hero-idle.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://rn61pvvhgx7y" path="res://Assets/sprites/player.gd" id="1_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://cia0ruabxjww7" path="res://Assets/individual_sheets/male_hero-combo_2.png" id="2_dd465"]
 [ext_resource type="Texture2D" uid="uid://dseopphw373h" path="res://Assets/individual_sheets/male_hero-jump.png" id="3_44cfe"]
 [ext_resource type="Texture2D" uid="uid://cthsxlmyvxl47" path="res://Assets/individual_sheets/male_hero-run.png" id="4_dd465"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyqjk"]
 size = Vector2(14, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrk8"]
+atlas = ExtResource("2_dd465")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye16i"]
+atlas = ExtResource("2_dd465")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75u2t"]
+atlas = ExtResource("2_dd465")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qa1u"]
+atlas = ExtResource("2_dd465")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gu1l"]
+atlas = ExtResource("2_dd465")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgy1"]
+atlas = ExtResource("2_dd465")
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -94,6 +119,29 @@ region = Rect2(1152, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_186t8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye16i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75u2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qa1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gu1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgy1")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ij6vw")
@@ -185,6 +233,9 @@ shape = SubResource("RectangleShape2D_wyqjk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_186t8")
-animation = &"jump"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.31984
+frame = 5
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
