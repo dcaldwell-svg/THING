@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fg6k85kg5qyx"]
+
+[ext_resource type="Script" uid="uid://djjkhhsyelwv4" path="res://Area2d.cs" id="1_gf172"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7n24"]
+size = Vector2(49, 73)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bdm8m"]
+
+[node name="Area2D" type="Area2D" unique_id=116772186]
+script = ExtResource("1_gf172")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1597450114]
+shape = SubResource("RectangleShape2D_r7n24")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=202092220]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(4.7683716e-07, -0.4999982)
+scale = Vector2(43.999996, 64.99999)
+texture = SubResource("CanvasTexture_bdm8m")

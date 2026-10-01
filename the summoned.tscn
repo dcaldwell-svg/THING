@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://cuctsrsr1575t"]
+
+[ext_resource type="Texture2D" uid="uid://c05vdf8jr8e4p" path="res://Undead executioner puppet/png/summonDeath.png" id="1_ih3h8"]
+[ext_resource type="Texture2D" uid="uid://c07q6hc3s54tc" path="res://Undead executioner puppet/png/summonAppear.png" id="2_arndf"]
+[ext_resource type="Texture2D" uid="uid://crsen7ywmhjti" path="res://Undead executioner puppet/png/summonIdle.png" id="3_two6y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7n24"]
+radius = 8.062258
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy3v4"]
+atlas = ExtResource("1_ih3h8")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d4q7"]
+atlas = ExtResource("1_ih3h8")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn2hm"]
+atlas = ExtResource("1_ih3h8")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqoib"]
+atlas = ExtResource("1_ih3h8")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rxfr"]
+atlas = ExtResource("1_ih3h8")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2llju"]
+atlas = ExtResource("2_arndf")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iviyg"]
+atlas = ExtResource("2_arndf")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y5sm"]
+atlas = ExtResource("2_arndf")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f54yo"]
+atlas = ExtResource("2_arndf")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cxlj"]
+atlas = ExtResource("2_arndf")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pis15"]
+atlas = ExtResource("2_arndf")
+region = Rect2(100, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij12q"]
+atlas = ExtResource("3_two6y")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1le5"]
+atlas = ExtResource("3_two6y")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5076f"]
+atlas = ExtResource("3_two6y")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06wh4"]
+atlas = ExtResource("3_two6y")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdm8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy3v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d4q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn2hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqoib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rxfr")
+}],
+"loop": 1,
+"name": &"DIE",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2llju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iviyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y5sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f54yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cxlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pis15")
+}],
+"loop": 1,
+"name": &"apppear",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij12q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1le5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5076f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06wh4")
+}],
+"loop": 1,
+"name": &"move around",
+"speed": 7.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1447948809]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=688419501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1967190904]
+shape = SubResource("CircleShape2D_r7n24")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D/CollisionShape2D" unique_id=690887836]
+position = Vector2(1, -9)
+sprite_frames = SubResource("SpriteFrames_bdm8m")
+animation = &"DIE"
+autoplay = "apppear"
+frame = 1
+frame_progress = 0.02788243

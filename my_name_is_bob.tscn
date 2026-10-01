@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ddapdicc1410h"]
+
+[ext_resource type="Texture2D" uid="uid://b7ve6bhyykv8h" path="res://Flying Demon 2D Pixel Art/Sprites/projectile.png" id="1_v6q3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdm8m"]
+size = Vector2(37.263157, 19.119497)
+
+[node name="Node2D" type="Node2D" unique_id=1469329861]
+
+[node name="Projectile" type="Sprite2D" parent="." unique_id=1878003615]
+scale = Vector2(4.75, 4.96875)
+texture = ExtResource("1_v6q3c")
+
+[node name="Area2D" type="Area2D" parent="Projectile" unique_id=752789158]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile/Area2D" unique_id=667100014]
+position = Vector2(-0.3157887, 2.3144658)
+shape = SubResource("RectangleShape2D_bdm8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=180161738]
